@@ -107,7 +107,7 @@ class UserController extends Controller
 
         $user->name = $updateData['name'];
         $user->email = $updateData['email'];
-        $user->password = $updateData['password'];
+        $user->password = bcrypt($updateData['password']);
 
         if($user->save()) {
             return response([
