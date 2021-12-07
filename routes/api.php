@@ -57,5 +57,11 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::put('tiketpesawat/{id}', 'Api\TiketPesawatController@update');
     Route::delete('tiketpesawat/{id}', 'Api\TiketPesawatController@destroy');
 
+    Route::get('user', 'Api\UserController@index');
+    Route::get('user/{id}', 'Api\UserController@show');
+    Route::post('user', 'Api\UserController@store');
+    Route::put('user/{id}', 'Api\UserController@update');
+    Route::delete('user/{id}', 'Api\UserController@destroy');
+
     Route::post('logout', 'Api\AuthController@logout');
 });
