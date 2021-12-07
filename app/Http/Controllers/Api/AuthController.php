@@ -51,7 +51,7 @@ class AuthController extends Controller
         $user = Auth::user();
 
         if($user->email_verified_at == NULL){
-            return response()->json(['error'=>'Please Verify Email'], 401);
+            return response(['message' => 'Please Verify Email'], 401);
         }
 
         $token = $user->createToken('Authentication Token')->accessToken;
